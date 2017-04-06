@@ -1,0 +1,7 @@
+.DS_Store
+.vscode/
+ansigo
+!ansigo/
+lock.json
+manifest.json
+vendor/
