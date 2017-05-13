@@ -490,7 +490,11 @@ func ansi(inputFileBuffer []byte, inputFileSize int64, fontName string, bits int
 		colors[15] = color.RGBA{255, 255, 255, 255}
 	} else {
 		// Allocate standard ANSi color palette
-		draw.Draw(imANSi, imANSi.Bounds(), &image.Uniform{black}, image.ZP, draw.Src)
+		if transparent {
+			draw.Draw(imANSi, imANSi.Bounds(), image.Transparent, image.ZP, draw.Src)
+		} else {
+			draw.Draw(imANSi, imANSi.Bounds(), &image.Uniform{black}, image.ZP, draw.Src)
+		}
 
 		colors[0] = color.RGBA{0, 0, 0, 255}
 		colors[1] = color.RGBA{170, 0, 0, 255}
