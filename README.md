@@ -157,7 +157,7 @@ ansigo is released under the BSD 3-Clause license. See `LICENSE` file for detail
 
 ansigo is developed by [Pete Garcin](http://rawktron.com).  
 
-Based on [ansilove/C][1]. ansilove is developed by [Frederic Cambus](http://www.cambus.net).
+Based on [ansilove/C][1]. ansilove is developed by Stefan Vogt, Brian Cassidy, [Frederic Cambus](http://www.cambus.net).
 
 # Resources
 
