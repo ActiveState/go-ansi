@@ -1,8 +1,8 @@
 # Description
 
-ansigo converts ANSi art files to PNG files. ansigo is a Go port of [ansilove/C][1] that aims to have as few external dependencies as possible. It provides both a command-line application and a package interface to allow you to integrate it with your own applications.
+go-ansi converts ANSi art files to PNG files. go-ansi is a Go port of [ansilove/C][1] that aims to have as few external dependencies as possible. It provides both a command-line application and a package interface to allow you to integrate it with your own applications.
 
-ansigo supports all of the options from ansilove/C with the addition of 24bit ANSi support.
+go-ansi supports all of the options from ansilove/C with the addition of 24bit ANSi support.
 
 # Installation
 
@@ -37,7 +37,7 @@ Rendering of all known ANSi / ASCII art file types:
 
 Files with custom suffix default to the ANSi renderer (e.g. ICE or CIA).
 
-ansigo is capabable of processing:
+go-ansi is capabable of processing:
 
 - SAUCE records
 - DOS and Amiga fonts (embedded binary dump)
@@ -55,8 +55,8 @@ Even more:
 
 ## Synopsis
 
-       ansigo [options] file
-       ansigo -e | -h | -v
+       go-ansi [options] file
+       go-ansi -e | -h | -v
 
 ## Options
 
@@ -75,11 +75,11 @@ Even more:
        -s          show SAUCE record without generating output
        -v          show version information
 
-There are certain cases where you need to set options for proper rendering. However, this is occasionally. Results turn out well with the built-in defaults. You may launch ansigo with the option `-e` to get a list of basic examples. Note that columns is restricted to `BIN` and `TND` files, it won't affect other file types.
+There are certain cases where you need to set options for proper rendering. However, this is occasionally. Results turn out well with the built-in defaults. You may launch go-ansi with the option `-e` to get a list of basic examples. Note that columns is restricted to `BIN` and `TND` files, it won't affect other file types.
 
 ## Fonts
 
-ansigo inherits all the embedded fonts from ansilove/C as binary data, so the most popular typefaces for rendering ANSi / ASCII art are available at your fingertips.
+go-ansi inherits all the embedded fonts from ansilove/C as binary data, so the most popular typefaces for rendering ANSi / ASCII art are available at your fingertips.
 
 PC fonts can be (all case-sensitive):
 
@@ -147,21 +147,21 @@ When an ANSi source was created using iCE colors, it was done with a special mod
 
 ## SAUCE records
 
-You can use ansigo as SAUCE reader without generating any output, just use option `-s` for this purpose.
+You can use go-ansi as SAUCE reader without generating any output, just use option `-s` for this purpose.
 
 # License
 
-ansigo is released under the BSD 3-Clause license. See `LICENSE` file for details.
+go-ansi is released under the BSD 3-Clause license. See `LICENSE` file for details.
 
 # Author
 
-ansigo is developed by [Pete Garcin](http://rawktron.com).  
+go-ansi is developed by [Pete Garcin](http://rawktron.com).  
 
 Based on [ansilove/C][1]. ansilove is developed by Stefan Vogt, Brian Cassidy, [Frederic Cambus](http://www.cambus.net).
 
 # Resources
 
-Project Homepage : [https://github.com/ActiveState/ansigo](https://github.com/ActiveState/ansigo)
+Project Homepage : [https://github.com/ActiveState/go-ansi](https://github.com/ActiveState/go-ansi)
 
 
 [1]: https://github.com/ByteProject/ansilove-C

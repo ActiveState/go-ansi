@@ -1,7 +1,7 @@
 .DS_Store
 .vscode/
-ansigo
-!ansigo/
+go-ansi
+!go-ansi/
 lock.json
 manifest.json
 vendor/

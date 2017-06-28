@@ -1,5 +1,5 @@
-// Package ansigo provides library-level access to ANSi file formats and SAUCE records
-package ansigo
+// package goansi provides library-level access to ANSi file formats and SAUCE records
+package goansi
 
 import (
 	"bytes"

@@ -1,5 +1,5 @@
 //  icedraw.go
-//  ansigo
+//  go-ansi
 //
 // Copyright (C) 2017 ActiveState Software Inc.
 // Written by Pete Garcin (@rawktron)
@@ -7,12 +7,13 @@
 // 	Based on ansilove/C
 //  Copyright (C) 2011-2017 Stefan Vogt, Brian Cassidy, and Frederic Cambus.
 //  All rights reserved.
+//  ansilove/C is licensed under the BSD-2 License.
 //
-//  This source code is licensed under the BSD 3-Clause License.
+//  go-ansi is licensed under the BSD 3-Clause License.
 //  See the file LICENSE for details.
 //
 
-package ansigo
+package goansi
 
 import (
 	"encoding/binary"

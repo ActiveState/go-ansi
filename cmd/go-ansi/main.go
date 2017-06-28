@@ -1,4 +1,4 @@
-//  ansigo
+//  go-ansi
 //
 // Copyright (C) 2017 ActiveState Software Inc.
 // Written by Pete Garcin (@rawktron)
@@ -6,8 +6,9 @@
 // 	Based on ansilove/C
 //  Copyright (C) 2011-2017 Stefan Vogt, Brian Cassidy, and Frederic Cambus.
 //  All rights reserved.
+//  ansilove/C is licensed under the BSD-2 License.
 //
-//  This source code is licensed under the BSD 3-Clause License.
+//  go-ansi is licensed under the BSD 3-Clause License.
 //  See the file LICENSE for details.
 //
 
@@ -21,7 +22,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	ansigo "github.com/ActiveState/ansigo"
+	goansi "github.com/ActiveState/go-ansi"
 )
 
 // Version - Package Version
@@ -59,36 +60,36 @@ func showHelp() {
 		"  mosoul             topaz500+\n" +
 		"  pot-noodle\n\n" +
 		"DOCUMENTATION:\n" +
-		"  Detailed help is available at the ansigo repository on GitHub.\n" +
-		"  <https://github.com/ActiveState/ansigo>\n\n")
+		"  Detailed help is available at the go-ansi repository on GitHub.\n" +
+		"  <https://github.com/ActiveState/go-ansi>\n\n")
 }
 
 func listExamples() {
 	fmt.Print("\nEXAMPLES:\n")
-	fmt.Print("  ansigo file.ans (output path/name identical to input, no options)\n" +
-		"  ansigo -i file.ans (enable iCE colors)\n" +
-		"  ansigo -r file.ans (adds Retina @2x output file)\n" +
-		"  ansigo -o dir/file file.ans (custom path/name for output)\n" +
-		"  ansigo -s file.bin (just display SAUCE record, don't generate output)\n" +
-		"  ansigo -m transparent file.ans (render with transparent background)\n" +
-		"  ansigo -f amiga file.txt (custom font)\n" +
-		"  ansigo -f 80x50 -b 9 -c 320 -i file.bin (custom font, bits, columns, icecolors)\n" +
+	fmt.Print("  go-ansi file.ans (output path/name identical to input, no options)\n" +
+		"  go-ansi -i file.ans (enable iCE colors)\n" +
+		"  go-ansi -r file.ans (adds Retina @2x output file)\n" +
+		"  go-ansi -o dir/file file.ans (custom path/name for output)\n" +
+		"  go-ansi -s file.bin (just display SAUCE record, don't generate output)\n" +
+		"  go-ansi -m transparent file.ans (render with transparent background)\n" +
+		"  go-ansi -f amiga file.txt (custom font)\n" +
+		"  go-ansi -f 80x50 -b 9 -c 320 -i file.bin (custom font, bits, columns, icecolors)\n" +
 		"\n")
 }
 
 func versionInfo() {
 	fmt.Print("All rights reserved.\n" +
-		"\nFork me on GitHub: <https://github.com/ActiveState/ansigo>\n" +
-		"Bug reports: <https://github.com/ActiveState/ansigo/issues>\n\n" +
+		"\nFork me on GitHub: <https://github.com/ActiveState/go-ansi>\n" +
+		"Bug reports: <https://github.com/ActiveState/go-ansi/issues>\n\n" +
 		"This is free software, released under the 3-Clause BSD license.\n" +
-		"<https://github.com/ActiveState/ansigo/blob/master/LICENSE>\n\n")
+		"<https://github.com/ActiveState/go-ansi/blob/master/LICENSE>\n\n")
 }
 
 // following the IEEE Std 1003.1 for utility conventions
 func synopsis() {
 	fmt.Print("\nSYNOPSIS:\n" +
-		"  ansigo [options] file\n" +
-		"  ansigo -e | -h | -v\n\n" +
+		"  go-ansi [options] file\n" +
+		"  go-ansi -e | -h | -v\n\n" +
 		"OPTIONS:\n" +
 		"  -b bits     set to 9 to render 9th column of block characters (default: 8)\n" +
 		"  -c columns  adjust number of columns for BIN files (default: 160)\n" +
@@ -115,7 +116,7 @@ func check(e error) {
 }
 
 func main() {
-	fmt.Printf("ansigo %s - ANSi / ASCII art to PNG converter\n"+
+	fmt.Printf("go-ansi %s - ANSi / ASCII art to PNG converter\n"+
 		"Copyright (C) 2017 ActiveState Software Inc. Written by Pete Garcin.\n", Version)
 
 	// SAUCE record related bool types
@@ -196,10 +197,10 @@ func main() {
 	}
 
 	// let's check the file for a valid SAUCE record
-	record := ansigo.GetSauce(input)
+	record := goansi.GetSauce(input)
 
 	// if we find a SAUCE record, update bool flag
-	if string(record.Sauceinf.ID[:]) == ansigo.SauceID {
+	if string(record.Sauceinf.ID[:]) == goansi.SauceID {
 		fileHasSAUCE = true
 	}
 
@@ -258,12 +259,12 @@ func main() {
 		}
 
 		// CLI does image resizing inside the pngw pkg to avoid parsing the file twice
-		outputImg = ansigo.Parse(inputFileBuffer, inputFileSize, fontName, bits, columns, mode, icecolors, fext, 1.0)
+		outputImg = goansi.Parse(inputFileBuffer, inputFileSize, fontName, bits, columns, mode, icecolors, fext, 1.0)
 
 		if outputImg != nil {
-			ansigo.WritePng(outputFile, outputImg, 1.0)
+			goansi.WritePng(outputFile, outputImg, 1.0)
 			if createRetinaRep {
-				ansigo.WritePng(retinaout, outputImg, 2.0)
+				goansi.WritePng(retinaout, outputImg, 2.0)
 			}
 		}
 
