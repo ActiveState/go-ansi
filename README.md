@@ -8,6 +8,8 @@ go-ansi supports all of the options from ansilove/C with the addition of 24bit A
 
 After cloning this repo or downloading the code, you'll need to ensure that any required dependencies are installed.
 
+First, you will need a version of the Go programming language installed. You can of course download [ActiveGo](https://www.activestate.com/activego/downloads) for your preferred platform.
+
 This package uses [github.com/nfnt/resize](https://github.com/nfnt/resize). You can either manually place this within the
 `vendor` folder, or use a dependency management package.  
 
